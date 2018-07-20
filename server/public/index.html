@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <script src="scripts/client.js"></script>
+
     <script src="vendors/angular.min.js"></script>
     <script src="vendors/angular-route.min.js"></script>
+
+    <script src="scripts/client.js"></script>
 
     <link href="styles/style.css" rel="stylesheet" type="text/css">
 
     <title>myRetail RESTful Service</title>
 </head>
-<body>
+
+<body ng-app="MyRetail" ng-controller="ProductController as vm">
     <h1>hello and welcome to myRetail</h1>
     <div>products here</div>
+
+    {{vm.message}}
+
 </body>
+
 </html>
