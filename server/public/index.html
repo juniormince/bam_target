@@ -18,11 +18,13 @@
 
 <body ng-app="MyRetail" ng-controller="ProductController as vm">
     <h1>hello and welcome to myRetail</h1>
-    <div>products here</div>
-    <p/>
+
 
     <div ng-repeat="product in vm.productList">
-        {{product.name}} <p/>
+        {{product.name}}
+        <p/>
+        <a href="#!/{{product.id}}" on-click="vm.getProductDetails(id)">see details</a>
+        
     </div>
 </body>
 
