@@ -5,8 +5,9 @@ const Product = require('../models/product.schema');
 
 //get products from db
 router.get('/', (req, res) => {
+    //reminder to get by id
     console.log(req.params.id);
-
+    
     Product.find({})
         .then((dbResults) => {
             res.send(dbResults);
@@ -16,8 +17,6 @@ router.get('/', (req, res) => {
             res.sendStatus(500);
         });
 });
-
-//route for updating product
 
 
 module.exports = router;
