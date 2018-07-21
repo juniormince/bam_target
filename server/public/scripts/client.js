@@ -7,7 +7,23 @@ app.controller('ProductController', ['$http', function ($http) {
 
     var self = this;
 
-    self.message = `hey`;
+    self.productList = [];
+
+    self.getProducts = function () {
+        $http({
+            method: 'GET',
+            url: '/products'
+        })
+            .then(function (response) {
+                self.productList = response.data;
+            })
+            .catch(function (error) {
+                console.log('error on /products GET', error);
+            });
+    }
+
+
+    self.getProducts();
 
 
 }]);
