@@ -18,7 +18,5 @@ router.get('/', (req, res) => {
         });
 });
 
-//route for updating product
-
 
 module.exports = router;
