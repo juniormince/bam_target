@@ -19,9 +19,11 @@
 <body ng-app="MyRetail" ng-controller="ProductController as vm">
     <h1>hello and welcome to myRetail</h1>
     <div>products here</div>
+    <p/>
 
-    {{vm.message}}
-
+    <div ng-repeat="product in vm.productList">
+        {{product.name}} <p/>
+    </div>
 </body>
 
 </html>
