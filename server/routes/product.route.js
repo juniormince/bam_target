@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 //get details
 router.get('/:id', (req, res) => {
-    Product.find({ id: req.params.id })
+    Product.findById(req.params.id)
         .then((results) => {
             res.send(results);
         })
