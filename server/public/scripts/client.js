@@ -1,46 +1,18 @@
 console.log('js czeck');
 
-var app = angular.module('MyRetail', []);
+var app = angular.module('MyRetailApp', ['ngRoute']);
 
-app.controller('ProductController', ['$http', function ($http) {
-    console.log('ProductController czeck');
-
-    var self = this;
-
-    self.productList = [];
-    self.productDetail = [];
-
-    self.getProducts = function () {
-        $http({
-            method: 'GET',
-            url: '/products'
+app.config(['$routeProvider', function ($routeProvider) {
+    $routeProvider
+        .when('/', {
+            templateUrl: 'views/catalog.html',
+            controller: 'ProductController as vm'
         })
-            .then(function (response) {
-                self.productList = response.data;
-            })
-            .catch(function (error) {
-                console.log('error on /products', error);
-            });
-    }
-
-    self.getProductDetails = function (id) {
-        $http({
-            method: 'GET',
-            url: `/products/${id}`
+        .when('/:id', {
+            templateUrl: 'views/details.html',
+            controller: 'DetailsController as vm'
         })
-            .then(function (response) {
-                console.log('response', response.data);
-                if (response.data[0].id == id) {
-                    self.productDetail = response.data;
-                } else {
-                    console.log('error in /products/:id');
-                }
-            })
-    }
-
-
-    //run on page load
-    self.getProducts();
-
-
+        .otherwise({
+            template: '<h1 class="error">SORRY 404: page does not exist.</h1>'
+        });
 }]);
