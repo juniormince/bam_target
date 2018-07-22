@@ -3,9 +3,11 @@ app.service('CatalogService', ['$http', function ($http) {
 
     var self = this;
 
+    
     self.productList = { list: [] };
-    // self.productDetail = [];
+    self.productDetail = { list: [] };
 
+    //GET req for products
     self.getProducts = function () {
         $http({
             method: 'GET',
@@ -19,21 +21,26 @@ app.service('CatalogService', ['$http', function ($http) {
             });
     }
 
-    // self.getProductDetails = function (id) {
-    //     $http({
-    //         method: 'GET',
-    //         url: `/products/${id}`
-    //     })
-    //         .then(function (response) {
-    //             console.log('response', response.data);
-    //             if (response.data[0].id == id) {
-    //                 self.productDetail = response.data;
-    //             } else {
-    //                 console.log('error in /products/:id');
-    //             }
-    //         })
-    // }
+    //GET req for product details
+    self.getProductDetails = function (id) {
+        $http({
+            method: 'GET',
+            url: `/products/${id}`
+        })
+            .then(function (response) {
+                if (response.data[0].id == id) {
+                    self.productDetail.list = response.data;
+                } else {
+                    console.log('error in /products/:id');
+                }
+            })
+    }
+
+    //GET req for API products
+
+    
 
     //on page load
     self.getProducts();
+
 }]);
