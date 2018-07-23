@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 //get details
 router.get('/:id', (req, res) => {
-    Product.findById(req.params.id)
+    Product.find({id: req.params.id})
         .then((results) => {
             res.send(results);
         })
@@ -26,23 +26,5 @@ router.get('/:id', (req, res) => {
             res.sendStatus(500);
         });
 });
-
-//route for put
-
-// router.put('/:id', (req, res) => {
-//     Product.findByIdAndUpdate(req.body._id, req.body)
-//         .then(() => {
-//             res.sendStatus(200);
-//         })
-//         .catch((error) => {
-//             console.log('error in update query', error);
-//             res.sendStatus(500);
-//         });
-// });
-
-
-
-
-//API call here
 
 module.exports = router;

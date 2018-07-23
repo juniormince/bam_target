@@ -30,10 +30,11 @@ app.service('CatalogService', ['$http', function ($http) {
             .then(function (response) {
                 if (response.data[0].id == id) {
                     self.productDetail.list = response.data;
-                } else {
-                    console.log('error in /products/:id');
                 }
             })
+            .catch(function (error) {
+                console.log('error in /products/:id', error);
+            });
     }
 
     //GET req for API products
