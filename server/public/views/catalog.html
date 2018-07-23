@@ -1,0 +1,10 @@
+<div class="container">
+
+    PRODUCTS HERE.
+    <div ng-repeat="product in vm.productList.list">
+        <pre>{{product.name | json}}</pre>
+        <a href="#!/{{product.id}}" on-click="vm.getProductDetails(id)">see details</a>
+    </div>
+
+
+</div>
