@@ -67,7 +67,7 @@ app.service('CatalogService', ['$http', function ($http) {
     //             self.getProductDetails();
     //         })
     //         .catch(function (error) {
-    //             console.log('error on /update/:id', error);
+    //             console.log('error on update /:id', error);
     //         })
     // }
 
