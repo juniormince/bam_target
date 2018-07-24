@@ -1,5 +1,3 @@
-console.log('js czeck');
-
 var app = angular.module('MyRetailApp', ['ngRoute']);
 
 app.config(['$routeProvider', function ($routeProvider) {

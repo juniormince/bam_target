@@ -1,5 +1,4 @@
 app.service('CatalogService', ['$http', function ($http) {
-    console.log('CatalogService LOADED');
 
     var self = this;
 
@@ -46,7 +45,6 @@ app.service('CatalogService', ['$http', function ($http) {
             url: '/products/api'
         })
         .then(function (response) {
-            console.log('api res', response.data.product.item);
             self.productListApi.list = response.data.product.item;
         })
         .catch(function (error) {
