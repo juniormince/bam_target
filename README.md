@@ -27,7 +27,7 @@ myRetail is a RESTful service that can retrieve product and price details by ID.
 
 ## Functionality Features
 - [x] Responds to an HTTP GET request at /products/{id} and delivers product data as JSON (where {id} will be a number.
-- [x] Performs an HTTP GET to retrieve the product name from an external API. (ex. The Big Lebowski (Blu-Ray)
+- [x] Performs an HTTP GET to retrieve the product name from an external API. (ex. The Big Lebowski (Blu-Ray))
 - [x] Reads pricing information from a NoSQL data store and combines it with the product id and name from the HTTP request into a single response.
 ### BONUS/Stretch: 
 - [ ] Accepts an HTTP PUT request at the same path (/products/{id}), containing a JSON request body similar to the GET response, and updates the product’s price in the data store.
