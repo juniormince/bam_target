@@ -44,5 +44,16 @@ router.get('/:id', (req, res) => {
         });
 });
 
+router.put('/:id', (req, res) => {
+    Product.findByIdAndUpdate(req.body._id, req.body)
+        .then(() => {
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log('error in update query', error);
+            res.sendStatus(500);
+        });
+});
+
 
 module.exports = router;
