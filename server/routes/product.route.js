@@ -2,6 +2,23 @@
 
 const router = require('express').Router();
 const Product = require('../models/product.schema');
+const requestPromise = require('request-promise');
+
+//get from external API ( has to come before /:id )
+router.get('/api', (req, res) => {
+    //example API
+    var tcin = '13860428';
+    var urlBase = `http://redsky.target.com/v2/pdp/tcin/${tcin}?excludes=taxonomy,price,promotion,bulk_ship,rating_and_review_reviews,rating_and_review_statistics,question_answer_statistics`;
+
+    requestPromise(urlBase + tcin, (error, response, body) => {
+        if (error) {
+            console.log('error in /api');
+            res.sendStatus(500);
+        } else {
+            res.send(body);
+        }
+    });
+});
 
 //get from db
 router.get('/', (req, res) => {
@@ -15,9 +32,9 @@ router.get('/', (req, res) => {
         });
 });
 
-//get details
+//get details by id
 router.get('/:id', (req, res) => {
-    Product.find({id: req.params.id})
+    Product.find({ id: req.params.id })
         .then((results) => {
             res.send(results);
         })
@@ -26,5 +43,6 @@ router.get('/:id', (req, res) => {
             res.sendStatus(500);
         });
 });
+
 
 module.exports = router;
