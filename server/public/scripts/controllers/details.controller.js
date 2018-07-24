@@ -1,5 +1,4 @@
 app.controller('DetailsController', ['CatalogService', '$routeParams', function (CatalogService, $routeParams) {
-    console.log('DetailsController LOADED');
 
     var self = this;
 
