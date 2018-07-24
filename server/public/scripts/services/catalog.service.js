@@ -3,8 +3,10 @@ app.service('CatalogService', ['$http', function ($http) {
 
     var self = this;
 
-    
+
     self.productList = { list: [] };
+    self.productListApi = { list: [] };
+
     self.productDetail = { list: [] };
 
     //GET req for products
@@ -38,10 +40,23 @@ app.service('CatalogService', ['$http', function ($http) {
     }
 
     //GET req for API products
+    self.getProductApi = function () {
+        $http({
+            method: 'GET',
+            url: '/products/api'
+        })
+        .then(function (response) {
+            console.log('api res', response.data.product.item);
+            self.productListApi.list = response.data.product.item;
+        })
+        .catch(function (error) {
+            console.log('error in /products/api', error);
+        });
+    }
 
-    
 
     //on page load
     self.getProducts();
+    self.getProductApi();
 
 }]);

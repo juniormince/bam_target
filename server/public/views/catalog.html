@@ -1,10 +1,20 @@
 <div class="container">
 
-    PRODUCTS HERE.
-    <div ng-repeat="product in vm.productList.list">
-        <pre>{{product.name | json}}</pre>
-        <a href="#!/{{product.id}}" on-click="vm.getProductDetails(id)">see details</a>
+    <div>
+        API PRODUCTS HERE.
+        <div ng-repeat="apiProduct in vm.productListApi.list">
+            <pre>{{apiProduct.title | json}}</pre>
+        </div>
+        <!-- creates correct url but doesn't give details yet -->
+        <a href="#!/{{vm.productListApi.list.tcin}}" on-click="vm.getProductDetails()">see details</a>
     </div>
 
+    <div>
+        PRODUCTS HERE.
+        <div ng-repeat="product in vm.productList.list">
+            <pre>{{product.name | json}}</pre>
+            <a href="#!/{{product.id}}" on-click="vm.getProductDetails(id)">see details</a>
+        </div>
+    </div>
 
 </div>

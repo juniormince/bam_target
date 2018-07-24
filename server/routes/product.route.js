@@ -6,8 +6,9 @@ const requestPromise = require('request-promise');
 
 //get from external API ( has to come before /:id )
 router.get('/api', (req, res) => {
-    //example API
+    //example tcin
     var tcin = '13860428';
+    //example API
     var urlBase = `http://redsky.target.com/v2/pdp/tcin/${tcin}?excludes=taxonomy,price,promotion,bulk_ship,rating_and_review_reviews,rating_and_review_statistics,question_answer_statistics`;
 
     requestPromise(urlBase + tcin, (error, response, body) => {
