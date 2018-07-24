@@ -8,6 +8,7 @@ app.controller('DetailsController', ['CatalogService', '$routeParams', function 
 
     //use id to get product info
     self.getProductDetails = CatalogService.getProductDetails($routeParams.id);
+
     self.details = CatalogService.productDetail;
 
 }]);

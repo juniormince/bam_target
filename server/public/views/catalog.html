@@ -1,15 +1,15 @@
 <div class="container">
 
+<!-- products from api -->
     <div>
-        API PRODUCTS HERE.
         <div ng-repeat="apiProduct in vm.productListApi.list">
             <pre>{{apiProduct.title | json}}</pre>
         </div>
         <a href="#!/{{vm.productListApi.list.tcin}}" on-click="vm.getProductDetails(vm.productListApi.list.tcin)">see details</a>
     </div>
 </p>
+<!-- products from database -->
     <div>
-        PRODUCTS HERE.
         <div ng-repeat="product in vm.productList.list">
             <pre>{{product.name | json}}</pre>
             <a href="#!/{{product.id}}" on-click="vm.getProductDetails(id)">see details</a>
