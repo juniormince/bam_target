@@ -14,8 +14,8 @@ myRetail is a RESTful service that can retrieve product and price details by ID.
 * clone or fork this repository
 * run ```npm install```
 * start mongo using mongod
-* run npm start
-* mock data can be found in data.js. copy/paste
+* run ```npm start```
+* mock data can be found and copied from data.js
 
 ## Built With
 
