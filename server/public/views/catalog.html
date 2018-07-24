@@ -5,10 +5,9 @@
         <div ng-repeat="apiProduct in vm.productListApi.list">
             <pre>{{apiProduct.title | json}}</pre>
         </div>
-        <!-- creates correct url but doesn't give details yet -->
-        <a href="#!/{{vm.productListApi.list.tcin}}" on-click="vm.getProductDetails()">see details</a>
+        <a href="#!/{{vm.productListApi.list.tcin}}" on-click="vm.getProductDetails(vm.productListApi.list.tcin)">see details</a>
     </div>
-
+</p>
     <div>
         PRODUCTS HERE.
         <div ng-repeat="product in vm.productList.list">
