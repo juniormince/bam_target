@@ -32,3 +32,4 @@ myRetail is a RESTful service that can retrieve product and price details by ID.
 ### BONUS/Stretch: 
 [] Accepts an HTTP PUT request at the same path (/products/{id}), containing a JSON request body similar to the GET response, and updates the product’s price in the data store.
 
+
