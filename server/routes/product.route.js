@@ -45,5 +45,18 @@ router.get('/:id', (req, res) => {
         });
 });
 
+//put for price update
+// router.put('/:id', (req, res) => {
+//     Product.findOneAndUpdate({id: req.params.id}, req.body)
+//         .then(() => {
+//             console.log(req.body);
+//             res.sendStatus(200);
+//         })
+//         .catch((error) => {
+//             console.log('error in update price', error);
+//             res.sendStatus(500);
+//         });
+// });
+
 
 module.exports = router;

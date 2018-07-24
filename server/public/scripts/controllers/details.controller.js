@@ -11,4 +11,6 @@ app.controller('DetailsController', ['CatalogService', '$routeParams', function 
 
     self.details = CatalogService.productDetail;
 
+    // self.updatePrice = CatalogService.updatePrice(newPrice);
+
 }]);

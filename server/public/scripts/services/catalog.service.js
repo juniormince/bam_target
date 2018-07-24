@@ -54,6 +54,24 @@ app.service('CatalogService', ['$http', function ($http) {
         });
     }
 
+    //PUT req to update product price
+    // self.updatePrice = function (newPrice) {
+    //     console.log(newPrice);
+    //     $http({
+    //         method: 'PUT',
+    //         url: '/update/:id',
+    //         data: newPrice
+    //     })
+    //         .then(function (response) {
+    //             console.log('response from put', response);
+    //             self.getProductDetails();
+    //         })
+    //         .catch(function (error) {
+    //             console.log('error on /update/:id', error);
+    //         })
+    // }
+
+
 
     //on page load
     self.getProducts();
